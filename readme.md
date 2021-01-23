@@ -32,6 +32,9 @@ A full stack LAN management and monitoring system
 
 <b> Back end </b>
 - The part of the service that glues all other parts together
+- JSON data sent using the API is interpreted based on the api route and then pushed into the relevant array
+- When each array gets to a length of 100, the first element will be shifted out of the array
+- Express is used to create the routes and as previously mentioned the templating engine is Pug.
 
 
 <b> Services </b>
@@ -44,3 +47,8 @@ Managing and remembering the name of each service is slightly tricky - so I made
 
 - This style would need to be generic on the web form side but hardcoded depending on device type to use the appropriate syntax. It would also need a complex array of options to use and offer some form of input validation.
 - Netmetrix - a tool I created previously to measure latency and loss. Does a ping check every second for 60 seconds before resetting stats and calculates average latency and loss in percent. While this is ready now, I would need dynamic text to show the refreshed data every second. 
+
+- Using websockets for 2-way communication and IPC. I currently have a working prototype that works between Node ws module and C++'s websocketpp - I just haven't needed to implement bidirectional communication between services just yet.
+
+
+I will eventually provide a full installer with all dependencies that can be used to build the project from source and provide periodic updates once I add things such as HTTPS and refactor the code in a more object oriented fashion.
