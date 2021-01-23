@@ -36,3 +36,10 @@ A full stack LAN management and monitoring system
 
 <b> Services </b>
 Managing and remembering the name of each service is slightly tricky - so I made a script with each module of the whole project to start or stop these.
+
+
+<b>Future Additions</b>
+- I previously created a tool that allows you to poll or alter the configuration of a switch without having to telnet/SSH to it using Netmiko. I intend at some point to create a webform that will allow you to select a port and then either get or set a number of parameters (IP, VLAN information, routes, etc) much like the old style Cisco Catalyst switches and HP switches. Displaying running config may be slightly more difficult to streamline as the possibilities are quite vast and so it may require a single row of inputs as such to build the full command:
+<i>(get/set) (interface/arp/route) (GigabitEthernet/mac) (<Port Number>)</i>
+ This style would need to be generic on the web form side but hardcoded depending on device type to use the appropriate syntax. It would also need a complex array of options to use and offer some form of input validation.
+- Netmetrix - a tool I created previously to measure latency and loss. Does a ping check every second for 60 seconds before resetting stats and calculates average latency and loss in percent. While this is ready now, I would need dynamic text to show the refreshed data every second. 
