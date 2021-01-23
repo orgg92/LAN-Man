@@ -38,7 +38,7 @@ A full stack LAN management and monitoring system
 
 
 <b> Services </b>
-Managing and remembering the name of each service is slightly tricky - so I made a script with each module of the whole project to start or stop these.
+- Managing and remembering the name of each service is slightly tricky - so I made a script with each module of the whole project to start or stop these.
 
 
 <b>Future Additions</b>
