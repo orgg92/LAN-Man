@@ -11,4 +11,8 @@ A full stack LAN management and monitoring system
 
 <b> DHCP Monitor </b>
 
- 
+<b> SSH Monitor </b>
+
+<b> WebUI </b>
+
+<b> Back end </b>
