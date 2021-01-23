@@ -3,8 +3,9 @@ A full stack LAN management and monitoring system
 - Device details and polling (Python, SQLite)
 - DHCP discover monitor (C++)
 - SSH monitor (C++)
+- Host finder (C++)
 - Web UI (Javascript, Pug)
-- Server back end (Node JS, Express, Socket.io, ws)
+- Server back end (Node JS, Express, ws)
 
 
 <b> LAN device details </b>
@@ -24,6 +25,10 @@ A full stack LAN management and monitoring system
 <b> SSH Monitor </b>
 - As above, except our filter is altered to listen for ports 22 instead of 67/68.
 
+<b> Host finder </b>
+- A ping sweep utility that scans a /24 based off the specified interface.
+- If a host does not respond, we also try an arping to check or any responses, if none we consider the host offline (granted this does not consider ICMP being filtered but this could always be enhanced using an nmap scan per host to check for open ports which would inevitably be a slower process).
+
 <b> WebUI </b>
 - The front end of this service is Javascript and templated by Pug.
 - The LAN service details simply run the Python checker with the --c flag and then dumps the std out nicely onto the page.
@@ -33,9 +38,9 @@ A full stack LAN management and monitoring system
 <b> Back end </b>
 - The part of the service that glues all other parts together
 - JSON data sent using the API is interpreted based on the api route and then pushed into the relevant array
-- When each array gets to a length of 100, the first element will be shifted out of the array
+- When each array gets to a length of 100, the first element will be shifted out of the array (here we could implement permanent storage and store events in blocks of 100)
 - Express is used to create the routes and as previously mentioned the templating engine is Pug.
-
+- So far the project uses Basic Auth with a generic username/pass combo and the API end points protected with a token.
 
 <b> Services </b>
 - Managing and remembering the name of each service is slightly tricky - so I made a script with each module of the whole project to start or stop these.
