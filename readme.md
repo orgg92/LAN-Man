@@ -5,3 +5,10 @@ A full stack LAN management and monitoring system
 - SSH monitor (C++)
 - Web UI (Javascript, Pug)
 - Server back end (Node JS, Express, Socket.io, ws)
+
+
+<b> LAN device details </b>
+
+<b> DHCP Monitor </b>
+
+ 
