@@ -13,7 +13,7 @@ A full stack LAN management and monitoring system
 - Python app can probe hosts from IPs found in table and then pings them from localhost, if the host doesn't respond, it's status is "D" and a time stamp of the check is added to the db.
 - The --c flag simply dumps output from the text.
 - The service runs once per minute 
-- You can add or remove a device using --add or --del and this requires an IP, MAC and hostname to be input. This takes the data, adds it to the sqlite db but also adds static entries in /etc/dhcpd.manual and then restarts dhcpd so that any new devices with that MAC will get the desired IP.
+- You can add or remove a device using --add or --del and this requires an IP, MAC and hostname to be input. This takes the data, adds it to the sqlite db but also adds static entries in /etc/dhcpd.manual and then restarts dhcpd so that any new devices with that MAC will get the desired IP. <b> Note: </b> A DHCP server on the box will need configuring to include the listening interface, a subnet declaration and the /etc/dhcpd.manual. Without this, items will only be added to the db for monitoring and then it will fail.
 
 <b> DHCP Monitor </b>
 - Written in C++ and uses libtins and libcurl to sniff on an interface.
